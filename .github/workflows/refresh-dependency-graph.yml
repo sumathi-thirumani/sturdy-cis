@@ -1,0 +1,16 @@
+name: Refresh Dependency Graph
+
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+   contents: write
+   
+jobs:
+  generate-sbom:
+    uses: sumathi-thirumani/shared-gha-tools/.github/workflows/dependency-graph-refresh.yml@feature/dependency-graph-refresh
+
