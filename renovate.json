@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "America/Vancouver",
+  "schedule": [
+    "after 9pm"
+  ],
+  "ignorePaths": [
+    "**/.github/workflows/refresh-dependency-graph.yml",
+    "**/jenkins/**",
+    "**/*.md"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "enabled": false
+    },
+    {
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchFileNames": [
+        "api/requirements.txt"
+      ],
+      "enabled": true
+    }
+  ]
+}
